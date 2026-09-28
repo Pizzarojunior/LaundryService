@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suds &amp; Fold Laundry Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="logo" href="#top">Suds &amp; Fold</a>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav">
+<a href="#services">Services</a><a href="#prices">Prices</a><a href="#how">How it works</a><a class="adminbtn" href="#admin">Admin login</a><a class="btn" href="#book">Book a pickup</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<div>
+<h1>Your laundry, picked up dirty and back to you fresh.</h1>
+<p>We collect, wash, dry, fold and deliver within 48 hours. Choose a pickup time, leave the bag by your door, and get your evening back.</p>
+<div class="cta"><a class="btn" href="#book">Book a pickup</a><a class="btn ghost" href="#prices">Estimate my price</a></div>
+</div>
+<img alt="Front-loading washing machine full of soapy water and bubbles" src="images/hero-washing-machine.svg">
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<h2>What we clean</h2>
+<p class="lead">Pick one service or mix them in the same bag. Everything is sorted by colour and fabric.</p>
+<div class="grid">
+<article class="card"><div class="pic" role="img" aria-label="Neatly folded stack of towels and shirts" style="background-image:url(&quot;images/service-wash-fold.svg&quot;)"></div><div class="b"><h3>Wash &amp; fold</h3><p>Everyday clothes and towels, washed, dried and folded by weight.</p></div></article>
+<article class="card"><div class="pic" role="img" aria-label="Shirts hanging on a rail" style="background-image:url(&quot;images/service-dry-cleaning.svg&quot;)"></div><div class="b"><h3>Dry cleaning</h3><p>Suits, dresses and delicate pieces, returned on hangers.</p></div></article>
+<article class="card"><div class="pic" role="img" aria-label="Iron pressing a shirt" style="background-image:url(&quot;images/service-ironing.svg&quot;)"></div><div class="b"><h3>Ironing</h3><p>Crisp shirts and trousers, pressed and ready to wear.</p></div></article>
+<article class="card"><div class="pic" role="img" aria-label="Bed with a clean duvet" style="background-image:url(&quot;images/service-bedding.svg&quot;)"></div><div class="b"><h3>Bedding &amp; duvets</h3><p>Bulky items your home machine can't handle, dried fully.</p></div></article>
+</div>
+</div>
+</section>
+
+<section id="prices" style="padding-top:0">
+<div class="wrap split">
+<div class="photo" role="img" aria-label="Laundry basket overflowing with clothes and bubbles" style="background-image:url(&quot;images/laundry-basket.svg&quot;)"></div>
+<div>
+<h2>Price estimator</h2>
+<p class="lead">Enter your items to see a quick estimate. Prices are in Ghana cedis (GH₵) and are examples you can edit.</p>
+<div class="calc">
+<div class="row"><label for="q1">Wash &amp; fold (per kg) · GH₵15</label><input id="q1" type="number" min="0" value="0" data-p="15"></div>
+<div class="row"><label for="q2">Dry-cleaned suit · GH₵60</label><input id="q2" type="number" min="0" value="0" data-p="60"></div>
+<div class="row"><label for="q3">Ironed shirt · GH₵5</label><input id="q3" type="number" min="0" value="0" data-p="5"></div>
+<div class="row"><label for="q4">Duvet or blanket · GH₵80</label><input id="q4" type="number" min="0" value="0" data-p="80"></div>
+<div class="total"><span>Estimate</span><span id="total" aria-live="polite">GH₵0.00</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="how" style="padding-top:0">
+<div class="wrap">
+<h2>How it works</h2>
+<p class="lead">Four steps, no trips to the laundromat.</p>
+<ol class="steps">
+<li><b>Book</b>Choose a pickup window that suits you.</li>
+<li><b>We collect</b>Our driver picks up your bag from your door.</li>
+<li><b>We clean</b>Sorted, washed, dried and folded or pressed.</li>
+<li><b>We deliver</b>Back within 48 hours, fresh and folded.</li>
+</ol>
+</div>
+</section>
+
+<section id="book" class="band">
+<div class="wrap">
+<h2>Book a pickup</h2>
+<p class="lead">Tell us where and when. We'll confirm by phone.</p>
+<form id="form" novalidate>
+<label>Full name<input id="name" autocomplete="name"></label>
+<label>Phone number<input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="024 123 4567"></label>
+<label>Pickup address<input id="addr" autocomplete="street-address" placeholder="House number and street"></label>
+<label>Nearest landmark or GPS address<input id="lm" placeholder="e.g. Opposite the Shell filling station, or GA-123-4567"></label>
+<label>Service<select id="svc"><option>Wash &amp; fold</option><option>Dry cleaning</option><option>Ironing</option><option>Bedding &amp; duvets</option></select></label>
+<label>Pickup date<input id="date" type="date"></label>
+<div class="err" id="err" role="alert"></div>
+<button class="btn" type="submit">Book pickup</button>
+</form>
+<div class="ok" id="ok" hidden></div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© Suds &amp; Fold Laundry Services. Open every day, 7am to 8pm. <a href="#admin">Admin login</a></div></footer>
+
+<div id="adminView" hidden>
+<div class="adm-top"><strong>Suds &amp; Fold · Admin</strong><div><a href="#top">Back to website</a><button id="logout" hidden>Log out</button></div></div>
+<div class="adm-body">
+<div class="lock" id="adm-login"><h1>Admin login</h1><p class="adm-note">Log in to see booked services.</p>
+<form id="loginForm" novalidate>
+<label>Username<input id="au" autocomplete="username" autocapitalize="none"></label>
+<label>Password<input id="ap" type="password" autocomplete="current-password"></label>
+<div class="err" id="aerr" role="alert"></div>
+<button class="btn" type="submit">Log in</button>
+</form>
+<a href="#top">Back to website</a></div>
+<div id="adm-content" hidden>
+<h1>Booked services</h1>
+<p class="adm-note" id="adminMsg"></p>
+<div class="stats" id="stats"></div>
+<div class="tools"><input id="q" type="search" placeholder="Search name, phone, address or landmark" aria-label="Search bookings"><select id="filter" aria-label="Filter by service"><option value="">All services</option><option>Wash &amp; fold</option><option>Dry cleaning</option><option>Ironing</option><option>Bedding &amp; duvets</option></select></div>
+<div class="tbl"><table><thead><tr><th>Booked</th><th>Customer</th><th>Phone</th><th>Address</th><th>Landmark</th><th>Service</th><th>Pickup date</th><th></th></tr></thead><tbody id="adminRows"></tbody></table></div>
+</div>
+</div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
